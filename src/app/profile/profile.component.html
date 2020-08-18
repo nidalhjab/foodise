@@ -1,0 +1,112 @@
+
+        <div class="container">
+      
+            <div *ngIf= "!isEdit" class="card">
+              <div class="card-title">
+                    <button (click) = "edit(editUser)">تعديل</button>
+                <h3> Foodsie  في فريق {{user.first_name}} {{user.last_name}}   مرحبا  
+                </h3>
+                
+              </div>
+              <div *ngIf="image" class="card-image">
+                    <img [src]="previewUrl">
+              </div>
+             
+              <div class="card-image">
+                  <img src="../../assets/auto.png">
+              </div>
+              <div style="text-align: center" class="uploadImg">
+                  <input type="file" name="image" (change)="fileProgress($event.target.files)"/>
+                  <br>
+                  <button  type="submit" (click)="getPhoto()">Submit</button>
+                  <br>
+                  <span style="color: red">{{message}}</span>
+              </div>
+              <div class="card-body">
+                  <div class="name">
+                <span>{{user.first_name}} {{user.last_name}}</span>
+            </div>
+            <div class="generalInfo">
+                <span>{{user.phone}}</span>
+                <br>
+                <span>{{user.email}}</span>
+            </div>
+              </div>
+            </div>
+      
+       
+      
+      
+        </div>
+ 
+      <ng-template #editUser>
+            <div  class="modal-header">
+              <h4  class="modal-title" id="modal-basic-title">معلومات المستخدم</h4>
+              <button type="button" class="close" aria-label="Close" (click)="close(editUser)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="editForm">
+                <div class="form-row">
+          
+                  <div class="form-group col-6">
+                    <label>الاسم الاول</label>
+                    <input type="text" formControlName="first_name" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+                    <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                      <div *ngIf="f.first_name.errors.required">الاسم الاول مطلوب</div>
+                    </div>
+                  </div>
+                  <div class="form-group col-6">
+                    <label>الاسم الثاني</label>
+          
+                    <input type="text" formControlName="last_name" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+                    <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                      <div *ngIf="f.last_name.errors.required">الاسم الثاني مطلوب</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row-group">
+                <div class="form-group col- 9">
+                  <label>رقم الهاتف</label>
+                  <input type="text" formControlName="phone" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                  <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                    <div *ngIf="f.phone.errors.required">الهاتف مطلوب</div>
+                  </div>
+                </div>
+                <!-- <div class="form-group col-3 ">
+                  <label></label>
+                  <select formControlName="gender" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                  </select>
+                </div> -->
+                </div>
+                <div class="form-group">
+                    <label>البريد الالكتروني</label>
+                    <input type="text" formControlName="email" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">البريد الالكتروني مطلوب</div>
+                      <div *ngIf="f.email.errors.email">الرجاء التاكد من صيغة الايميل</div>
+                    </div>
+                  </div>
+
+          
+          
+                <div class="text-center">
+                  <button (click)="submitFrom()" class="btn btn-primary mr-1">
+                    حفظ
+                  </button>
+          
+                  <button class="btn btn-secondary" type="reset" (click)="onReset()">الغاء</button>
+                </div>
+              </form>
+          
+            </div>
+          
+          </ng-template>

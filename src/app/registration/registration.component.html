@@ -1,0 +1,89 @@
+
+  <div class="container">
+      <div class="card">
+        <div class="card-title">
+          <h3>مرحبا بك في فريق Foodsie</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registForm">
+            <div class="form-row">
+              <div class="form-group col-6">
+                  <label>* الاسم الثاني </label>
+                    <input placeholder="* الإسم الثاني " type="text" formControlName="last_name" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+                      <div class="errorMsg" >
+                      <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                      
+                          <span *ngIf="f.last_name.errors.required">الاسم الثاني مطلوب</span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-6">
+                      <label>* الاسم الاول </label>
+                      <input placeholder="* الإسم الاول " type="text" formControlName="first_name" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+                        <div class="errorMsg" >
+                        <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                        
+                            <span *ngIf="f.first_name.errors.required">الاسم الاول مطلوب</span>
+                          </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-4">
+
+                <select (change)="selectOption($event)" name="countryCode">
+                  <optgroup>
+                    <option *ngFor="let code of countryCodes" value="{{code.id}}">{{code.flag}} +{{code.phone_code}}
+                    </option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group col-8">
+                  <label>* رقم الهاتف </label>
+                <input placeholder="رقم الهاتف" type="text" formControlName="phone" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                  <div class="errorMsg" >
+                  <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                
+                      <span *ngIf="f.phone.errors.required"> رقم الهاتف مطلوب </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <label>* البريد الالكتروني </label>
+                    <input placeholder="البريد الإلكتروني " type="email" formControlName="email" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <div class="errorMsg" >
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      
+                        <span *ngIf="f.email.errors.required">البريد الإلكتروني مطلوبة</span>
+                      </div>
+                    </div>
+                  </div>
+            <div class="form-group">
+                <label>* كلمة المرور </label>
+              <input placeholder="كلمة المرور" type="password" formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div class="errorMsg" >
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+               
+                    <span *ngIf="f.password.errors.required">كلمة المرور مطلوبة</span>
+                  </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-12 joinUs">
+                <button (click)="onSubmit()" class="signIn">
+                   !إنضم 
+                </button>
+                <span *ngIf= "message">{{message}}</span>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+  </div>

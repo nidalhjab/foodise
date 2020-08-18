@@ -1,0 +1,41 @@
+.container{
+   
+        .card{
+            margin-top:98px;
+            margin-right:auto;
+            margin-left:auto;
+           width: 50%;
+          .card-title{
+              h3{
+                  text-align: center;
+                  color: rgb(234, 69, 37);
+              }
+              button{
+                  background-color: rgb(234, 69, 37);
+                  color: white;
+              }
+          } 
+          .card-image {
+              text-align: center;
+             img{
+                  width: 50%;
+             }
+          }
+          .card-body{
+              text-align: center;
+              color: rgb(252, 145, 58);
+          }
+        }
+    }
+    .modal-header{
+        h4{
+            text-align: center;
+        }
+    }
+  
+    label{
+        float: right;
+    }
+    input{
+        direction:rtl;
+    }

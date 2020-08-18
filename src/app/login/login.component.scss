@@ -1,0 +1,79 @@
+$break-small: 768px;
+.container {
+    .img{
+        
+            display: none;
+            @media screen and (max-width: $break-small) {
+                display: block;
+                background-image: url(../../assets/aboveImage.jpg);
+               min-height: 150px;
+               opacity: 0.6;
+               border-radius: 6px;
+               width: 344px;
+        }
+    }
+    .card {
+        margin-top: 73px;
+        background-color: unset;
+        background-clip: unset;
+        border: unset;
+        @media screen and (max-width: $break-small) {
+           margin-top: unset;
+        
+    }
+        .card-body {
+            
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+            background-color: white;
+            margin: 0 auto;
+
+            .forget {
+                color: rgb(252, 145, 58);
+                
+            }
+            .error{
+                min-height: 10px;
+                color: red;
+            }
+
+            .signIn {
+                background-color: rgb(234, 69, 37);
+                color: white;
+                width: 45%;
+                border-radius: 15px;
+                margin-top: 20px;
+            }
+
+            .join {
+                color: rgb(0, 50, 98);
+                
+            }
+
+            .register {
+                color: rgb(234, 69, 37);
+                width: 45%;
+                border: 1px solid #ea4525;
+                border-radius: 15px;
+
+            }
+        }
+    }
+}
+
+.form-group{
+    text-align: center;
+}
+
+::placeholder {
+    color: rgb(170, 170, 170);
+    text-align: right;
+}
+
+select {
+    height: 38px;
+}
+
+input {
+    direction: rtl;
+}

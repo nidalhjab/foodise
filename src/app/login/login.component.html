@@ -1,0 +1,65 @@
+
+  <div class="container">
+    <div class="img">
+      
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="loginForm">
+          <div class="form-row">
+            <div class="form-group col-xs-2 ">
+
+              <select id="codeId" (change)="selectOption($event)" name="countryCode">
+                <optgroup>
+                  <option *ngFor="let code of countryCodes" value="{{code.id}}">{{code.flag}} +{{code.phone_code}}
+                  </option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group col-xs-10  ">
+              <input placeholder="رقم الهاتف" type="text" formControlName="phone" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                <div *ngIf="f.phone.errors.required">رقم الهاتف مطلوب</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="كلمة المرور" type="password" formControlName="password" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">كلمة المرور مطلوبة</div>
+            </div>
+            <a href="" class="forget">هل نسيت كلمة المرور ؟</a>
+          </div>
+          <div class="form-group">
+            <div class="col-12">
+                <div  class="error">    
+                    <span > {{message}}</span>
+                  </div>
+            </div>
+            <div class="col-12">
+              <button (click)="onSubmit()" class="signIn">
+                تسجيل الدخول
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-12">
+              <span class="join">
+                هل ترغب بالانضمام الى فريق Foodsie!
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-12">
+              <button (click)="signUp()" class="register">
+                انضم إلينا
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>

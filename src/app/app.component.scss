@@ -1,0 +1,129 @@
+$break-small: 768px;
+
+header {
+    .container {
+        .mainHeader {
+            display: flex;
+            padding: 10px;
+            justify-content: space-around;
+            border-bottom: 1px solid rgb(252, 145, 58);
+
+            @media screen and (max-width: $break-small) {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .mainNav {
+                .mobile {
+                    display: none;
+
+                    @media screen and (max-width: $break-small) {
+                        display: block;
+                        font-size: 30px;
+                        position: absolute;
+                        top: 14px;
+                       
+                        color: rgb(252, 145, 58);
+                    }
+                }
+
+                nav {
+                    direction: rtl;
+                    @media screen and (max-width: $break-small) {
+                        display: none;
+                    }
+                    ul {
+                        list-style-type: none;
+
+                        li {
+                            display: inline;
+                            margin: 10px;
+                            @media screen and (max-width: $break-small) {
+                                display: block;
+                                margin: unset;
+                                margin-top: 63px;
+                            }
+                           
+
+                            .joinUs {
+                                background-color: rgb(234, 69, 37);
+                                padding: 3px 30px 2px 30px;
+                                border-radius: 15px;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .logo {
+                img {
+                    width: 55%;
+                    @media screen and (max-width: $break-small) {
+                       float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 2px;
+    width: 100%;
+    @media screen and (max-width: $break-small) {
+      position: unset;
+    }
+    .container {
+        display: flex;
+        border-top: 1px solid white;
+        padding: 10px;
+        justify-content: space-around;
+        @media screen and (max-width: $break-small) {
+      display: block;
+      margin-top: 34px;
+      text-align: center;
+        }
+        .socialIcons {
+            .fa {
+                padding: 5px;
+                font-size: 12px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                border-radius: 50%;
+
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+            .fa-facebook {
+                background-color: white;
+                color: black;
+            }
+
+            .fa-twitter {
+                background-color: white;
+                color: black;
+            }
+
+            .fa-google {
+                background-color: white;
+                color: black;
+            }
+
+            .fa-linkedin {
+                background-color: white;
+                color: black;
+            }
+        }
+
+        .policy {
+            color: white;
+            font-size: 12px;
+        }
+    }
+}

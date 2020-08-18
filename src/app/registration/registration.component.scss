@@ -1,0 +1,68 @@
+.container {
+    .card {
+
+        background-color: unset;
+        background-clip: unset;
+        border: unset;
+        .card-title{
+            margin-top: 20px;
+            text-align: center;
+            color: rgb(234, 69, 37);
+        }
+
+        .card-body {
+            max-width: 438px;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 1.25rem;
+            background-color: white;
+            margin: 0 auto;
+            text-align: right;
+            .errorMsg{
+                // min-height: 22px;
+                max-width: 193px;
+            }
+            .forget {
+                color: rgb(252, 145, 58);
+            }
+
+            .signIn {
+                background-color: rgb(234, 69, 37);
+                color: white;
+                width: 45%;
+                border-radius: 15px;
+                margin-top: 20px;
+            }
+
+            .join {
+                color: rgb(0, 50, 98);
+            }
+
+            .register {
+                color: rgb(234, 69, 37);
+                width: 45%;
+                border: 1px solid #ea4525;
+                border-radius: 15px;
+
+            }
+            .joinUs{
+                text-align: center
+            }
+        }
+    }
+}
+
+
+::placeholder {
+    color: rgb(170, 170, 170);
+    text-align: right;
+}
+
+select {
+    height: 38px;
+    margin-top: 30px;
+}
+
+
+input {
+    direction: rtl;
+}
